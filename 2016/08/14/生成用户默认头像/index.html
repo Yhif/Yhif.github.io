@@ -84,39 +84,36 @@
 
 
 
-<meta name="description" content="Codeigniter 3 生成用户默认头像
-预览图
+<meta name="description" content="预览图
 用到类库的 Github 地址:
 
  https://github.com/yzalis/Identicon
 
-先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 Code">
+先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeigniter3 生成用户默认头像">
 <meta property="og:url" content="http://yoursite.com/2016/08/14/生成用户默认头像/index.html">
 <meta property="og:site_name" content="Hexo Blog">
-<meta property="og:description" content="Codeigniter 3 生成用户默认头像
-预览图
+<meta property="og:description" content="预览图
 用到类库的 Github 地址:
 
  https://github.com/yzalis/Identicon
 
-先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 Code">
+先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/benjaminAtYzalisDotCom.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/Benjamin.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.8.8.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.4.4.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/yzalis.png">
-<meta property="og:updated_time" content="2016-08-14T06:45:13.000Z">
+<meta property="og:updated_time" content="2016-08-14T06:49:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeigniter3 生成用户默认头像">
-<meta name="twitter:description" content="Codeigniter 3 生成用户默认头像
-预览图
+<meta name="twitter:description" content="预览图
 用到类库的 Github 地址:
 
  https://github.com/yzalis/Identicon
 
-先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 Code">
+先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/benjaminAtYzalisDotCom.png">
 
 
@@ -300,7 +297,7 @@
       
 
       
-        <h3 id="Codeigniter-3-生成用户默认头像"><a href="#Codeigniter-3-生成用户默认头像" class="headerlink" title="Codeigniter 3 生成用户默认头像"></a>Codeigniter 3 生成用户默认头像</h3><hr>
+        <hr>
 <h6 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h6><p><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/benjaminAtYzalisDotCom.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/Benjamin.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.8.8.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.4.4.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/yzalis.png" alt="image"></p>
 <p>用到类库的 Github 地址:</p>
 <blockquote>
@@ -319,8 +316,7 @@
 <ul>
 <li>新建 <figure class="highlight plain"><figcaption><span>``` 文件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>&lt;?php </p>
-<p>defined(‘BASEPATH’) or exit(‘No direct script access allowed’);</p>
+<p>&lt;?php<br>defined(‘BASEPATH’) or exit(‘No direct script access allowed’);</p>
 <p>require BASEPATH.’../vendor/autoload.php’;</p>
 <p>class Identicon extends \Identicon\Identicon{</p>
 <p>}</p>
@@ -480,7 +476,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Codeigniter-3-生成用户默认头像"><span class="nav-number">1.</span> <span class="nav-text">Codeigniter 3 生成用户默认头像</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#预览图"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">预览图</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#预览图"><span class="nav-number">1.</span> <span class="nav-text">预览图</span></a></li></ol></div>
             
           </div>
         </section>
