@@ -89,7 +89,7 @@
 
  https://github.com/yzalis/Identicon
 
-先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel">
+先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel E">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeigniter3 生成用户默认头像">
 <meta property="og:url" content="http://yoursite.com/2016/08/14/生成用户默认头像/index.html">
@@ -99,13 +99,13 @@
 
  https://github.com/yzalis/Identicon
 
-先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel">
+先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel E">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/benjaminAtYzalisDotCom.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/Benjamin.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.8.8.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.4.4.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/yzalis.png">
-<meta property="og:updated_time" content="2016-08-14T06:49:01.000Z">
+<meta property="og:updated_time" content="2016-08-14T07:06:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeigniter3 生成用户默认头像">
 <meta name="twitter:description" content="预览图
@@ -113,7 +113,7 @@
 
  https://github.com/yzalis/Identicon
 
-先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel">
+先说明一下, 这个类库需要使用 Composer 的方式自动加载, 虽然 Codeigniter 3 支持 Composer, 因为之前项目的原因，并没有采用. 因为之前看过岁寒的博客看到一篇博文, 给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel E">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/benjaminAtYzalisDotCom.png">
 
 
@@ -297,8 +297,7 @@
       
 
       
-        <hr>
-<h6 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h6><p><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/benjaminAtYzalisDotCom.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/Benjamin.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.8.8.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.4.4.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/yzalis.png" alt="image"></p>
+        <h6 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h6><p><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/benjaminAtYzalisDotCom.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/Benjamin.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.8.8.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/8.8.4.4.png" alt="image"><br><img src="https://raw.githubusercontent.com/yzalis/Identicon/master/doc/yzalis.png" alt="image"></p>
 <p>用到类库的 Github 地址:</p>
 <blockquote>
 <p><a href="https://github.com/yzalis/Identicon" target="_blank" rel="external"> https://github.com/yzalis/Identicon</a></p>
@@ -314,35 +313,14 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer install</span><br></pre></td></tr></table></figure>
 <ul>
-<li>新建 <figure class="highlight plain"><figcaption><span>``` 文件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>新建 application/libraries/Identicon.php 文件</li>
 </ul>
-<p>&lt;?php<br>defined(‘BASEPATH’) or exit(‘No direct script access allowed’);</p>
-<p>require BASEPATH.’../vendor/autoload.php’;</p>
-<p>class Identicon extends \Identicon\Identicon{</p>
-<p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这个所做的功能就是, require 自动加载文件, 自定义类继承``` \Identicon\Identicon ```类即可，是不是很简单.</span><br><span class="line"></span><br><span class="line">- 新建 ``` application/controllers/Avarta.php ``` 文件</span><br></pre></td></tr></table></figure>
-<p>&lt;?php </p>
-<p>defined(‘BASEPATH’) or exit(‘No direct script access allowed’);</p>
-<p>class Avarta extends CI_Controller{</p>
-<pre><code>public function output_avarta()
-{
-    // 加载类
-    $this-&gt;load-&gt;library(&apos;identicon&apos;);
-
-    // 实例化
-    $identicon = new Identicon();
-
-    // 返回 base64图片字符串
-    // $identicon-&gt;getImageDataUri(&apos;霍霍&apos;, 128);
-
-    // 返回图片
-    echo $identicon-&gt;displayImage(&apos;霍霍&apos;, 128);
-
-    // 返回图片数据
-    // $identicon-&gt;getImageData(&apos;霍霍&apos;, 128);
-}
-</code></pre><p>}</p>
-<p>```</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">defined(&apos;BASEPATH&apos;) or exit(&apos;No direct script access allowed&apos;);</span><br><span class="line"></span><br><span class="line">require BASEPATH.&apos;../vendor/autoload.php&apos;;</span><br><span class="line"></span><br><span class="line">class Identicon extends \Identicon\Identicon&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个所做的功能就是, require 自动加载文件, 自定义类继承 \Identicon\Identicon 类即可，是不是很简单.</p>
+<ul>
+<li>新建 application/controllers/Avarta.php 文件  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">defined(&apos;BASEPATH&apos;) or exit(&apos;No direct script access allowed&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Avarta extends CI_Controller &#123;</span><br><span class="line"></span><br><span class="line">    public function output_avarta()</span><br><span class="line">    &#123;</span><br><span class="line">    </span><br><span class="line">        // 加载类</span><br><span class="line">        $this-&gt;load-&gt;library(&apos;identicon&apos;);</span><br><span class="line">    </span><br><span class="line">        // 实例化</span><br><span class="line">        $identicon = new Identicon();</span><br><span class="line">    </span><br><span class="line">        // 返回 base64图片字符串</span><br><span class="line">        // $identicon-&gt;getImageDataUri(&apos;霍霍&apos;, 128);</span><br><span class="line">    </span><br><span class="line">        // 返回图片</span><br><span class="line">        echo $identicon-&gt;displayImage(&apos;霍霍&apos;, 128);</span><br><span class="line">    </span><br><span class="line">        // 返回图片数据</span><br><span class="line">        // $identicon-&gt;getImageData(&apos;霍霍&apos;, 128);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>完结。</li>
 </ul>
