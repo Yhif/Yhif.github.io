@@ -108,7 +108,7 @@ GitHub 源码地址：https://github.com/overtrue/wechat
 
 PHP &amp;gt;= 5.5.9
 op">
-<meta property="og:updated_time" content="2016-08-28T07:13:08.000Z">
+<meta property="og:updated_time" content="2016-08-28T07:18:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeigniter-3-with-EasyWeChat">
 <meta name="twitter:description" content="EasyWeChat 是什么
@@ -311,46 +311,17 @@ op">
 </blockquote>
 <p><strong>进入正题，配置 Composer 路径</strong></p>
 <p>由于EasyWeChat是一个标准的 Composer 包，我们需要对 Codeigniter 3 增加对 Composer 支持。</p>
-<p>首先在入口文件index.php中<figure class="highlight plain"><figcaption><span>BASEPATH.'core/CodeIgniter.php';```之前添加</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>// COMPOSER DIRECTORY NAME<br>$composer_path = ‘vendor’;</p>
-<p>if (($_composer_temp = realpath($composer_path)) !== FALSE)<br>{<br>    $composer_path = $_composer_temp.DIRECTORY_SEPARATOR;<br>}</p>
-<p>// Path to the composer directory<br>define(‘COMPOSERPATH’, $composer_path);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">然后修改```application/config/config.php```文件中 Composer 自动加载路径为：</span><br></pre></td></tr></table></figure></p>
-<p>$config[‘composer_autoload’] = COMPOSERPATH . ‘autoload.php’;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**安装 EasyWeChat Composer 包**</span><br><span class="line"></span><br><span class="line">将原来的 composer.json 重命名 composer.json.bak, 执行 ```composer require &quot;overtrue/wechat&quot;```，等待安装完毕就可以优雅的使用 EasyWeChat 了。</span><br><span class="line"></span><br><span class="line">**验证服务器地址有效性**</span><br><span class="line"></span><br><span class="line">微信开发者中心配置就不说了，自己查看文档配置即可。</span><br><span class="line">&gt; http://mp.weixin.qq.com/wiki/17/2d4265491f12608cd170a95559800f2d.html</span><br><span class="line"></span><br><span class="line">覆盖 ```application/controllers/Welcome.php``` 文件为：</span><br></pre></td></tr></table></figure></p>
-<p>&lt;?php<br>defined(‘BASEPATH’) OR exit(‘No direct script access allowed’);</p>
-<p>use EasyWeChat\Foundation\Application;</p>
-<p>class Welcome extends CI_Controller {</p>
-<pre><code>public function index()
-{
-    $this-&gt;load-&gt;view(&apos;welcome_message&apos;);
-}
-
-public function server()
-{
-    $options = [
-        &apos;debug&apos;  =&gt; true,
-        &apos;app_id&apos; =&gt; &apos;wxxxxxxxxxxxxxxxxxx&apos;,
-        &apos;secret&apos; =&gt; &apos;f77xxxxxxxxxxxxxxxxxxxxx&apos;,
-        &apos;token&apos;  =&gt; &apos;xxxxxxxx&apos;,
-        &apos;aes_key&apos; =&gt; &apos;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;, // 可选
-        &apos;log&apos; =&gt; [
-            &apos;level&apos; =&gt; &apos;debug&apos;,
-            &apos;file&apos;  =&gt; &apos;/tmp/easywechat.log&apos;, // XXX: 绝对路径！！！！
-        ]
-    ];
-
-    $app = new Application($options);
-    // 从项目实例中得到服务端应用实例。
-    $server = $app-&gt;server;
-    $server-&gt;setMessageHandler(function ($message) {
-        // $message-&gt;FromUserName // 用户的 openid
-        // $message-&gt;MsgType // 消息类型：event, text....
-        return &quot;您好！欢迎关注我!&quot;;
-    });
-    $response = $server-&gt;serve();
-    $response-&gt;send();
-}
-</code></pre><p>}</p>
-<p>```</p>
+<p>首先在入口文件index.php中 <strong>require_once BASEPATH.’core/CodeIgniter.php’;</strong> 之前添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// COMPOSER DIRECTORY NAME</span><br><span class="line">$composer_path = &apos;vendor&apos;;</span><br><span class="line"></span><br><span class="line">if (($_composer_temp = realpath($composer_path)) !== FALSE)</span><br><span class="line">&#123;</span><br><span class="line">	$composer_path = $_composer_temp.DIRECTORY_SEPARATOR;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Path to the composer directory</span><br><span class="line">define(&apos;COMPOSERPATH&apos;, $composer_path);</span><br></pre></td></tr></table></figure>
+<p>然后修改<strong>application/config/config.php</strong>文件中 Composer 自动加载路径为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$config[&apos;composer_autoload&apos;] = COMPOSERPATH . &apos;autoload.php&apos;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>安装 EasyWeChat Composer 包</strong></p>
+<p>将原来的 composer.json 重命名 composer.json.bak, 执行 <strong>composer require “overtrue/wechat”</strong>，等待安装完毕就可以优雅的使用 EasyWeChat 了。</p>
+<p><strong>验证服务器地址有效性</strong></p>
+<p>微信开发者中心配置就不说了，自己查看文档配置即可。</p>
+<blockquote>
+<p><a href="http://mp.weixin.qq.com/wiki/17/2d4265491f12608cd170a95559800f2d.html" target="_blank" rel="external">http://mp.weixin.qq.com/wiki/17/2d4265491f12608cd170a95559800f2d.html</a></p>
+</blockquote>
+<p>覆盖 <strong>application/controllers/Welcome.php</strong> 文件为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">defined(&apos;BASEPATH&apos;) OR exit(&apos;No direct script access allowed&apos;);</span><br><span class="line"></span><br><span class="line">use EasyWeChat\Foundation\Application;</span><br><span class="line"></span><br><span class="line">class Welcome extends CI_Controller &#123;</span><br><span class="line"></span><br><span class="line">	public function index()</span><br><span class="line">	&#123;</span><br><span class="line">		$this-&gt;load-&gt;view(&apos;welcome_message&apos;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public function server()</span><br><span class="line">	&#123;</span><br><span class="line">		$options = [</span><br><span class="line">		    &apos;debug&apos;  =&gt; true,</span><br><span class="line">		    &apos;app_id&apos; =&gt; &apos;wxxxxxxxxxxxxxxxxxx&apos;,</span><br><span class="line">		    &apos;secret&apos; =&gt; &apos;f77xxxxxxxxxxxxxxxxxxxxx&apos;,</span><br><span class="line">		    &apos;token&apos;  =&gt; &apos;xxxxxxxx&apos;,</span><br><span class="line">		    &apos;aes_key&apos; =&gt; &apos;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;, // 可选</span><br><span class="line">		    &apos;log&apos; =&gt; [</span><br><span class="line">		        &apos;level&apos; =&gt; &apos;debug&apos;,</span><br><span class="line">		        &apos;file&apos;  =&gt; &apos;/tmp/easywechat.log&apos;, // XXX: 绝对路径！！！！</span><br><span class="line">		    ]</span><br><span class="line">		];</span><br><span class="line"></span><br><span class="line">		$app = new Application($options);</span><br><span class="line">		// 从项目实例中得到服务端应用实例。</span><br><span class="line">		$server = $app-&gt;server;</span><br><span class="line">		$server-&gt;setMessageHandler(function ($message) &#123;</span><br><span class="line">		    // $message-&gt;FromUserName // 用户的 openid</span><br><span class="line">		    // $message-&gt;MsgType // 消息类型：event, text....</span><br><span class="line">		    return &quot;您好！欢迎关注我!&quot;;</span><br><span class="line">		&#125;);</span><br><span class="line">		$response = $server-&gt;serve();</span><br><span class="line">		$response-&gt;send();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>更多功能使用请查看 EasyWeChat 官方文档</strong></p>
 <blockquote>
 <p>文档：<a href="https://easywechat.org/zh-cn/docs/" target="_blank" rel="external">https://easywechat.org/zh-cn/docs/</a></p>
